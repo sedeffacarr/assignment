@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>JavaScript</title>
+    </head>
+    <body>
+        <h1>JavaScript</h1>
+        <!--anything inside of script tag is JS-->
+        <script type="text/JavaScript">
+           
+
+var house = {
+    areas: [{
+        livingRoom: {
+            items: ['tv','sofa']
+            },
+        bedroomOne: {
+            items: ['bed','washing machine'],
+            windows: 3
+        },
+        bedroomTwo:{
+            items: ['bed','bed','desk'],
+            windows: 4
+        },
+        kitchen:{
+            items: ['fridge','broken chair']
+        }
+    }],
+    garden: [true, 'Red Rose'],
+    garage: {
+        car: {
+        color: 'red',
+        wheels: 4,
+        honk: ()=>{alert("Beep")}
+        }
+    }
+};
+
+
+
+
+// Find total number of areas in the house
+let count =Object.keys(house.areas[0]).length;
+console.log(count);
+// Add a dining table to the living room
+house.areas[0].livingRoom.items.push("dining table");
+console.log(house.areas[0].livingRoom.items);
+// Add a stove to the kitchen
+house.areas[0].kitchen.items.push("stove");
+console.log(house.areas[0].kitchen.items);
+// Remove the washing machine from bedroomOne
+house.areas[0].bedroomOne.items.pop();
+console.log(house.areas[0].bedroomOne.items);
+// Find the total number of beds in all rooms
+let countbed=0;
+
+let bedcount5= (varobj)=>{
+    let countbed3=0;
+    for ( i=0;i<varobj.items.length;i++)
+    {
+        if(varobj.items[i]==="bed" )
+        { countbed3=countbed3+1};
+
+    return countbed3;    
+    }
+}
+bedcountfinal2=bedcount5(house.areas[0].livingRoom)+bedcount5(house.areas[0].bedroomOne)+bedcount5(house.areas[0].bedroomTwo)+bedcount5(house.areas[0].kitchen)
+
+console.log(bedcount5(bedcountfinal2));
+
+
+// Change the color of the car to blue
+house.garage.car.color="blue";
+console.log(house.garage.car.color);
+// Add a another car to the garage with a honk function
+house.garage.car2={honk: ()=>{alert("Beep")}};
+console.log(house.garage.car2);
+// Make the new car honk
+house.garage.car2.honk;
+// Change the 'broken chair' in the kitchen to 'new chair'
+house.areas[0].bedroomOne.items.pop();
+house.areas[0].bedroomOne.items.push("new chair");
+console.log(house.areas[0].bedroomOne.items);
+// If the house has a garden, console.log the name of the flower
+ if(house.garden){
+     console.log(house.garden[1]);
+ } ;
+
+        </script>
+    </body>
+</html>
+<!---->
+<!--anything inside of script tag is JS-->
+          
